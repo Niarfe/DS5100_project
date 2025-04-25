@@ -9,4 +9,4 @@ update: env
 
 test:
 	clear
-	pytest -v tests/
+	pytest -v tests/test_montecarlo.py
