@@ -6,6 +6,8 @@ import pandas as pd
 import numpy as np
 
 
+from itertools import combinations
+
 class Analyzer:
     def __init__(self, game):
         if not isinstance(game, Game):
@@ -30,10 +32,6 @@ class Analyzer:
         return df_count 
 
     def permutation_count(self):
-        # TODO:  I think there's an error here...
-        # thiking group by first col, then by second col, then take a count of dups
-        from itertools import permutations
-        df_perms = self.df.apply(lambda x: tuple(x), axis=1).apply(lambda x: list(permutations(x)))
-        df_counts = df_perms.explode().value_counts().to_frame(name='count')
-        df_counts.index = pd.MultiIndex.from_tuples(df_counts.index)
-        return df_counts 
+        df_perms = self.df.apply(lambda x: "_".join(list(x)), axis=1)
+        df_perms.value_counts().to_frame()
+        return df_perms

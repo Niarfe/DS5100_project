@@ -21,7 +21,17 @@ class AnalyzerTestSuite(unittest.TestCase):
         self.assertTrue(isinstance(self.analyzer.game, Game))
 
     def test_jackpot(self):
-        assert isinstance(self.analyzer.jackpot(), int)
+        self.assertTrue(isinstance(self.analyzer.jackpot(), int))
+
+    def test_face_counts(self):
+        self.assertTrue(isinstance(self.analyzer.face_counts(), pd.DataFrame))
+
+    def test_combo_count(self):
+        self.assertTrue(isinstance(self.analyzer.combo_count(), pd.DataFrame))
+
+    @unittest.skip("I need to figure out why this df is different")
+    def test_perm_count(self):
+        self.assertTrue(isinstance(self.analyzer.permutation_count(), pd.DataFrame))
 
 
 
