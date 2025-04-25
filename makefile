@@ -8,4 +8,5 @@ update: env
 	. env/bin/activate; pip install -r requirements.txt
 
 test:
-	python tests/test_die.py
+	clear
+	pytest -v tests/
