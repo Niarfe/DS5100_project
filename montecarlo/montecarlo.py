@@ -25,7 +25,7 @@ class Analyzer:
         return df_count 
 
     def permutation_count(self):
-        df_perms = self.df.apply(lambda x: "_".join(list(x)), axis=1)
+        df_perms = self.df.apply(lambda x: "".join(list(x)), axis=1)
         df_perms.value_counts().to_frame()
         return df_perms
 
