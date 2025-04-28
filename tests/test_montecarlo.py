@@ -27,7 +27,7 @@ class AnalyzerTestSuite(unittest.TestCase):
     def test_combo_count(self):
         self.assertTrue(isinstance(self.analyzer.combo_count(), pd.DataFrame))
 
-    @unittest.skip("I need to figure out why this df is different")
+    @unittest.skip("I need to figure out why this returns pd.core.series.Series")
     def test_perm_count(self):
         self.assertTrue(isinstance(self.analyzer.permutation_count(), pd.DataFrame))
 
