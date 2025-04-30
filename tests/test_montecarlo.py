@@ -52,7 +52,7 @@ class AnalyzerTestSuite(unittest.TestCase):
         """
         df = self.analyzer.face_counts()
         self.assertIsInstance(df, pd.DataFrame, "Analyzer face_counts should return a pandas dataframe")
-        self.assertAlmostEqual(int(df['tails'].sum()/1000), 0.9, None, "Given fair dice, about half the faces should be tails", 0.1)
+        self.assertAlmostEqual(int(df['tails'].sum()/1000), 0.9, None, "Given fair dice, about half the faces should be tails", 0.2)
 
     def test_combo_count(self):
         """

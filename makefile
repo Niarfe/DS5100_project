@@ -10,3 +10,6 @@ update: env
 test:
 	clear
 	pytest -v tests/test_montecarlo.py
+
+lint:
+	pylint montecarlo
